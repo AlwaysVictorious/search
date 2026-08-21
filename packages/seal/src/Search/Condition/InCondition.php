@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::in} factory method.
  */
-class InCondition
+class InCondition implements ConditionInterface
 {
     /**
      * @param list<string|int|float|bool> $values
@@ -34,7 +34,7 @@ class InCondition
      */
     public function createOrCondition(): OrCondition
     {
-        /** @var array<EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|AndCondition|OrCondition> $conditions */
+        /** @var array<ConditionInterface> $conditions */
         $conditions = [];
         foreach ($this->values as $value) {
             $conditions[] = new EqualCondition($this->field, $value);

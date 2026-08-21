@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace CmsIg\Seal\Search;
 
 use CmsIg\Seal\Search\Condition\Condition;
+use CmsIg\Seal\Search\Condition\ConditionInterface;
 use CmsIg\Seal\Search\Facet\AbstractFacet;
 
 class SearchQuery
@@ -24,7 +25,7 @@ class SearchQuery
     {
     }
 
-    public function filter(object $condition): static
+    public function filter(ConditionInterface $condition): static
     {
         $this->builder->addFilter($condition);
 
@@ -100,12 +101,12 @@ class SearchQuery
         return $this->filter(Condition::geoBoundingBox($field, $northLatitude, $eastLongitude, $southLatitude, $westLongitude));
     }
 
-    public function or(object ...$conditions): static
+    public function or(ConditionInterface ...$conditions): static
     {
         return $this->filter(Condition::or(...$conditions));
     }
 
-    public function and(object ...$conditions): static
+    public function and(ConditionInterface ...$conditions): static
     {
         return $this->filter(Condition::and(...$conditions));
     }

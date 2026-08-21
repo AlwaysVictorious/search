@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::greaterThan} factory method.
  */
-class GreaterThanCondition
+class GreaterThanCondition implements ConditionInterface
 {
     public function __construct(
         public readonly string $field,

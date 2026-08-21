@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::search} factory method.
  */
-class SearchCondition
+class SearchCondition implements ConditionInterface
 {
     public function __construct(
         public readonly string $query,

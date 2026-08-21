@@ -106,18 +106,12 @@ final class Condition
         return new GeoDistanceCondition($field, $latitude, $longitude, $distance);
     }
 
-    /**
-     * @param EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|InCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|NotInCondition|AndCondition|OrCondition $conditions
-     */
-    public static function and(...$conditions): AndCondition
+    public static function and(ConditionInterface ...$conditions): AndCondition
     {
         return new AndCondition(...$conditions);
     }
 
-    /**
-     * @param EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|InCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|NotInCondition|AndCondition|OrCondition $conditions
-     */
-    public static function or(...$conditions): OrCondition
+    public static function or(ConditionInterface ...$conditions): OrCondition
     {
         return new OrCondition(...$conditions);
     }

@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::equal} factory method.
  */
-class EqualCondition
+class EqualCondition implements ConditionInterface
 {
     public function __construct(
         public readonly string $field,

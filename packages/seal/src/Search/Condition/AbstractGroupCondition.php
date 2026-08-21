@@ -16,17 +16,14 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * @internal this class is internal please use AndCondition or OrCondition directly
  */
-abstract class AbstractGroupCondition
+abstract class AbstractGroupCondition implements ConditionInterface
 {
     /**
-     * @var array<EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|InCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|NotInCondition|AndCondition|OrCondition>
+     * @var array<ConditionInterface>
      */
     public readonly array $conditions;
 
-    /**
-     * @param EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|InCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|NotInCondition|AndCondition|OrCondition $conditions
-     */
-    public function __construct(...$conditions)
+    public function __construct(ConditionInterface ...$conditions)
     {
         $this->conditions = $conditions;
     }

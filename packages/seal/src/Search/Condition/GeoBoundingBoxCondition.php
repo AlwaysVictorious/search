@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::geoBoundingBox} factory method.
  */
-class GeoBoundingBoxCondition
+class GeoBoundingBoxCondition implements ConditionInterface
 {
     /**
      * The order may first be unusually, but it is the same as in common JS libraries like.

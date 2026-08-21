@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::notIn} factory method.
  */
-class NotInCondition
+class NotInCondition implements ConditionInterface
 {
     /**
      * @param list<string|int|float|bool> $values
@@ -34,7 +34,7 @@ class NotInCondition
      */
     public function createAndCondition(): AndCondition
     {
-        /** @var array<EqualCondition|GreaterThanCondition|GreaterThanEqualCondition|IdentifierCondition|LessThanCondition|LessThanEqualCondition|NotEqualCondition|AndCondition|OrCondition> $conditions */
+        /** @var array<ConditionInterface> $conditions */
         $conditions = [];
         foreach ($this->values as $value) {
             $conditions[] = new NotEqualCondition($this->field, $value);

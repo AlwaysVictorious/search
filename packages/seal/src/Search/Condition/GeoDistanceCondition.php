@@ -16,7 +16,7 @@ namespace CmsIg\Seal\Search\Condition;
 /**
  * Recommended way to create a new instance is use the {@see Condition::geoDistance} factory method.
  */
-class GeoDistanceCondition
+class GeoDistanceCondition implements ConditionInterface
 {
     /**
      * @param int $distance search radius in meters

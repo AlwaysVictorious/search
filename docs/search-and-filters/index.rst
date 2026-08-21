@@ -305,10 +305,10 @@ The fields are required to be marked as ``filterable`` in the index configuratio
 Filter on Objects and Typed Fields
 ----------------------------------
 
-To filter on ``Objects`` and ``Typed`` fields you need to use the ``.`` symbol
-as a separator between the object and the field.
+To filter on ``Object`` and ``Typed`` fields, use the ``.`` symbol as a
+separator between the object and the field.
 
-For example for a document like this where the rating value is filterable:
+For example, in the following document the rating value is filterable:
 
 .. code-block:: php
 
@@ -320,7 +320,7 @@ For example for a document like this where the rating value is filterable:
         ],
     ];
 
-Need to be queried this way `<object>.<field>`:
+It needs to be queried in the format `<object>.<field>`, which results in the following:
 
 .. code-block:: php
 
@@ -332,9 +332,10 @@ Need to be queried this way `<object>.<field>`:
         ->addFilter(Condition::lessThanEqual('rating.value', 2.5))
         ->getResult();
 
-To filter on ``Typed`` objects also the `.` symbol is used but the type name need to be included as well.
+The ``.`` symbol is also used to filter on ``Typed`` objects, but this requires
+the type name to be included as well.
 
-For example for a document like this where header media is filterable:
+For example, in the following document the header media is filterable:
 
 .. code-block:: php
 
@@ -347,7 +348,7 @@ For example for a document like this where header media is filterable:
         ],
     ];
 
-Need to be queried this way `<object>.<type>.<field>`:
+It needs to be queried in the format `<object>.<type>.<field>`, which results in the following:
 
 .. code-block:: php
 
@@ -359,7 +360,7 @@ Need to be queried this way `<object>.<type>.<field>`:
         ->addFilter(Condition::equal('header.image.media', 21))
         ->getResult();
 
-Also nested objects and types can be queried the same way.
+Nested objects and types can be queried the same way.
 
 --------------
 

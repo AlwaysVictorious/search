@@ -25,8 +25,10 @@ use CmsIg\Seal\Adapter\ReadWrite\ReadWriteAdapterFactory;
 use CmsIg\Seal\Adapter\RediSearch\RediSearchAdapterFactory;
 use CmsIg\Seal\Adapter\Solr\SolrAdapterFactory;
 use CmsIg\Seal\Adapter\Typesense\TypesenseAdapterFactory;
+use CmsIg\Seal\EngineInterface;
 use CmsIg\Seal\EngineRegistry;
 use CmsIg\Seal\Integration\Symfony\Command\IndexCreateCommand;
+use CmsIg\Seal\SearchService;
 use CmsIg\Seal\Integration\Symfony\Command\IndexDropCommand;
 use CmsIg\Seal\Integration\Symfony\Command\ReindexCommand;
 
@@ -62,6 +64,13 @@ return static function (ContainerConfigurator $container) {
     // -------------------------------------------------------------------//
     // Services                                                           //
     // -------------------------------------------------------------------//
+    $container->services()
+        ->set('cmsig_seal.search_service', SearchService::class)
+        ->args([
+            service(EngineInterface::class),
+        ])
+        ->alias(SearchService::class, 'cmsig_seal.search_service');
+
     $container->services()
         ->set('cmsig_seal.engine_registry', EngineRegistry::class)
         ->args([

@@ -28,9 +28,9 @@ use CmsIg\Seal\Adapter\Typesense\TypesenseAdapterFactory;
 use CmsIg\Seal\EngineInterface;
 use CmsIg\Seal\EngineRegistry;
 use CmsIg\Seal\Integration\Symfony\Command\IndexCreateCommand;
-use CmsIg\Seal\SearchService;
 use CmsIg\Seal\Integration\Symfony\Command\IndexDropCommand;
 use CmsIg\Seal\Integration\Symfony\Command\ReindexCommand;
+use CmsIg\Seal\SearchService;
 
 /*
  * @internal

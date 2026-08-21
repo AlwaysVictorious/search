@@ -380,8 +380,7 @@ Let's have a look at the following example fields:
         ],
     ];
 
-The following field definitions will show us how we can use ``Object`` fields to index the above fields
-via ``multiple`` flags.
+The following field definitions show how to index the above fields as ``Object`` fields, using the ``multiple`` flag for lists.
 
 .. code-block:: php
 

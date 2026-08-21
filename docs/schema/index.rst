@@ -352,7 +352,7 @@ ObjectField
 ~~~~~~~~~~~
 
 The ``Object`` field type is used to index nested objects. Unlike the other field types it is
-**not** ``searchable``, ``filterable``, ``sortable`` itself, but can contain fields
+**not** ``searchable``, ``filterable``, or ``sortable`` itself, but it can contain fields
 which are.
 
 It is represented in PHP as an ``associative array``.

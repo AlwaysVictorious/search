@@ -4,7 +4,7 @@ Search & Filter Conditions
 In the :doc:`../getting-started/index` documentation we already saw how we can use the ``SearchBuilder`` to
 search for different documents in our indexes.
 
-Beside search functionality the abstraction provides also different kind of filter conditions to build
+Besides search functionality the abstraction provides also different kind of filter conditions to build
 also complex overview pages for e-commerce or other kind of applications.
 
 The following shows the basic usage as already shown in the "Getting Started" documentation. Under the
@@ -367,7 +367,7 @@ Nested objects and types can be queried the same way.
 Pagination
 ----------
 
-Beside the searches and filters you can also limit the result by a given ``limit`` and/or ``offset``.
+Besides the searches and filters you can also limit the result by a given ``limit`` and/or ``offset``.
 
 .. code-block:: php
 

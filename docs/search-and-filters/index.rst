@@ -36,7 +36,7 @@ Conditions
 SearchCondition
 ~~~~~~~~~~~~~~~
 
-The ``SearchCondition`` is the most basic condition and can be used to search for a specific:
+The ``SearchCondition`` is the most basic condition and can be used to search for specific keywords:
 
 .. code-block:: php
 
@@ -48,7 +48,7 @@ The ``SearchCondition`` is the most basic condition and can be used to search fo
         ->addFilter(Condition::search('Search Term'))
         ->getResult();
 
-The condition does only search on fields which are marked as ``searchable`` in the index configuration.
+The condition only searches fields marked as ``searchable`` in the index configuration.
 
 EqualCondition
 ~~~~~~~~~~~~~~

@@ -18,7 +18,7 @@ use CmsIg\Seal\Search\SearchQuery;
 class SearchService
 {
     public function __construct(
-        private readonly EngineInterface $engine
+        protected readonly EngineInterface $engine
     ) {
     }
 

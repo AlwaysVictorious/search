@@ -1,8 +1,8 @@
 Schema
 ======
 
-In the :doc:`../getting-started/index` documentation we already saw how to define a schema for our indexes
-and where we have to define them based on our used ``Framework`` or how the create the ``Schema`` instance in
+In the :doc:`../getting-started/index` documentation we already saw how to define a schema for our indexes,
+where we have to define them based on our used ``Framework``, and how we can create the ``Schema`` instance in
 the ``Standalone`` usage.
 
 A Schema is a collection of one or more ``Index`` definitions. An ``Index`` is defined by a name and a list of ``Fields``.

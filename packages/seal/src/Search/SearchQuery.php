@@ -20,6 +20,7 @@ use CmsIg\Seal\Search\Facet\AbstractFacet;
 class SearchQuery
 {
     private bool $highlightFallback = false;
+    private int|null $limit = null;
 
     public function __construct(private SearchBuilder $builder)
     {
@@ -113,6 +114,7 @@ class SearchQuery
 
     public function limit(int $limit): static
     {
+        $this->limit = $limit;
         $this->builder->limit($limit);
 
         return $this;
@@ -121,6 +123,29 @@ class SearchQuery
     public function offset(int $offset): static
     {
         $this->builder->offset($offset);
+
+        return $this;
+    }
+
+    public function page(int $page, int|null $limit = null): static
+    {
+        if ($limit === null) {
+            $limit = $this->limit;
+        }
+
+        $this->builder->limit($limit)->offset(($page - 1) * $limit);
+
+        return $this;
+    }
+
+    /**
+     * @param callable(static): static $callback
+     */
+    public function when(bool $condition, callable $callback): static
+    {
+        if ($condition) {
+            return $callback($this);
+        }
 
         return $this;
     }
